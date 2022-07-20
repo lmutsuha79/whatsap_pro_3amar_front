@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Changa:wght@200;300;400;500;600;700;800&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    @apply font-Changa;
+  }
+
+  .container {
+    @apply mx-auto px-1 max-w-[1280px];
+    /* @apply mx-auto */
+  }
+  .main_section {
+    @apply mt-[100px];
+  }
+  .section_title {
+    @apply mb-12;
+  }
+  .section_title > h2 {
+    @apply text-4xl font-bold text-main-blue;
+  }
+
+  /* nav */
+  #mb_nav,
+  #desk_nav {
+    @apply sticky h-[80px] top-0 z-[99]
+  }
+
+  .nav_links_container > a {
+    @apply text-white text-lg font-semibold hover:text-main-gray transition-colors;
+  }
+
+  /* features */
+
+  .features_item {
+    @apply flex gap-2 bg-white rounded-md drop-shadow-md hover:drop-shadow-lg transition-opacity px-2 py-2 items-center;
+  }
+  .features_item p {
+    @apply text-second-blue;
+  }
+  .features_item img {
+    max-width: 30px;
+    max-height: 30px;
+  }
+  .swiper {
+    @apply h-fit py-10 lg:py-0 lg:h-full;
+  }
+  .slide_item_img_container {
+    @apply border-2 border-main-blue rounded-lg overflow-hidden;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply text-main-blue hover:text-second-blue transition-colors;
+  }
+  .swiper-pagination > span {
+    @apply bg-main-blue;
+  }
+
+  /* videos section */
+  .video_item {
+    @apply min-h-[315px];
+  }
+  .video_title {
+    @apply text-second-blue font-medium text-lg;
+  }
+
+  /* question and answers section */
+  .QandA_item {
+    @apply bg-white text-center drop-shadow-md hover:drop-shadow-lg transition-opacity rounded-md py-4 cursor-pointer space-y-2;
+  }
+  .question {
+    @apply text-main-blue font-medium;
+  }
+  .answer {
+    @apply max-h-0 overflow-hidden;
+  }
+  .answer > p {
+    @apply text-second-blue font-normal pt-2 border-main-gray/50 border-t;
+  }
+
+  /* about section */
+  .icon_about {
+    @apply transform hover:scale-110 transition-transform;
+  }
+  .icon_about > img {
+    @apply w-full h-full;
+  }
+
+  #hero_section {
+    /* background-color: rgb(0, 129, 227); */
+    background-image: url("/src/img/svg_hero.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  /* ################################################### */
+  /* slider style start */
+  /* .swiper {
+  width: 100%;
+  height: 100%;
+  } */
+
+  .swiper-slide {
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  /* slider style end */
+
+  /* about section */
+  .about-bg {
+    position: relative;
+    background-image: url("/src/img/about_bg.jpg");
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .about-bg::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #094067;
+    opacity: 0.35;
+  }
+  .about-bg > .container {
+    position: relative;
+  }
+}
