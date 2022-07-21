@@ -68,10 +68,16 @@
 
   /* question and answers section */
   .QandA_item {
-    @apply bg-white text-center drop-shadow-md hover:drop-shadow-lg transition-opacity rounded-md py-4 cursor-pointer space-y-2;
+    @apply bg-white text-start  drop-shadow-md hover:drop-shadow-lg transition-opacity rounded-md px-4 py-4 cursor-pointer space-y-2;
   }
   .question {
-    @apply text-main-blue font-medium;
+    @apply text-main-blue font-medium flex justify-between items-center;
+  }
+  .question .icon_q{
+    @apply w-[35px] transition-transform
+  }
+  .icon_q_top{
+    @apply transform rotate-180
   }
   .answer {
     @apply max-h-0 overflow-hidden;

@@ -27,6 +27,8 @@ const QandA_items = document.querySelectorAll('.QandA_item');
 QandA_items.forEach(item => {
   item.onclick = (e) => {
     const answer = item.querySelector('.answer');
+    const arrow = item.querySelector('.icon_q');
+    arrow.classList.toggle('icon_q_top');
     answer.classList.toggle('max-h-fit')
      
   }
