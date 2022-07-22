@@ -735,8 +735,50 @@ html{
 
 /* videos section */
 
+.img_video_container{
+  position: relative;
+}
+
 .video_item{
-  min-height: 315px;
+  cursor: pointer;
+}
+
+.img_vid_overlay{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(9 64 103 / 0.5);
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.icon_player{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-content: center;
+}
+
+.icon_player >svg >path{
+  fill: #fff;
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.img_vid_overlay:hover{
+  background-color: rgb(9 64 103 / 0.7);
+}
+
+.img_vid_overlay:hover path{
+  fill: #D9D9D9;
 }
 
 .video_title{
@@ -745,6 +787,11 @@ html{
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(95 108 123 / var(--tw-text-opacity));
+}
+
+#video_over_layer iframe{
+  height: 100%;
+  width: 100%;
 }
 
 /* question and answers section */
@@ -887,6 +934,10 @@ html{
   position: relative;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
@@ -899,8 +950,20 @@ html{
   bottom: 0px;
 }
 
+.top-0{
+  top: 0px;
+}
+
+.left-0{
+  left: 0px;
+}
+
 .z-30{
   z-index: 30;
+}
+
+.z-\[99\]{
+  z-index: 99;
 }
 
 .mx-2{
@@ -920,6 +983,10 @@ html{
 
 .mb-6{
   margin-bottom: 1.5rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
 }
 
 .flex{
@@ -964,6 +1031,10 @@ html{
   height: 35px;
 }
 
+.h-\[500px\]{
+  height: 500px;
+}
+
 .max-h-0{
   max-height: 0px;
 }
@@ -994,6 +1065,14 @@ html{
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.w-\[35px\]{
+  width: 35px;
+}
+
+.w-\[min\(650px\2c 99\%\)\]{
+  width: min(650px,99%);
 }
 
 .max-w-\[300px\]{
@@ -1031,6 +1110,10 @@ html{
 
 .place-content-center{
   place-content: center;
+}
+
+.place-items-center{
+  place-items: center;
 }
 
 .items-start{
@@ -1071,6 +1154,10 @@ html{
   row-gap: 4rem;
 }
 
+.gap-y-8{
+  row-gap: 2rem;
+}
+
 .space-y-4 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1089,6 +1176,10 @@ html{
   border-radius: 0.5rem;
 }
 
+.rounded-full{
+  border-radius: 9999px;
+}
+
 .bg-main-blue{
   --tw-bg-opacity: 1;
   background-color: rgb(9 64 103 / var(--tw-bg-opacity));
@@ -1099,8 +1190,21 @@ html{
   background-color: rgb(217 217 217 / var(--tw-bg-opacity));
 }
 
+.bg-main-blue\/95{
+  background-color: rgb(9 64 103 / 0.95);
+}
+
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .fill-white{
   fill: #fff;
+}
+
+.p-\[8px\]{
+  padding: 8px;
 }
 
 .py-4{
@@ -1251,6 +1355,11 @@ html{
   background-color: rgb(9 64 103 / 0.9);
 }
 
+.hover\:bg-main-gray:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 217 217 / var(--tw-bg-opacity));
+}
+
 .hover\:fill-main-gray:hover{
   fill: #D9D9D9;
 }
@@ -1298,3 +1407,5 @@ html{
     padding-bottom: 0.75rem;
   }
 }
+
+

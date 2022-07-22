@@ -8,6 +8,8 @@
     @apply font-Changa;
   }
 
+
+
   .container {
     @apply mx-auto px-1 max-w-[1280px];
     /* @apply mx-auto */
@@ -25,7 +27,7 @@
   /* nav */
   #mb_nav,
   #desk_nav {
-    @apply sticky h-[80px] top-0 z-[99]
+    @apply sticky h-[80px] top-0 z-[99];
   }
 
   .nav_links_container > a {
@@ -59,11 +61,34 @@
   }
 
   /* videos section */
-  .video_item {
-    @apply min-h-[315px];
+
+  .img_video_container {
+    @apply relative;
   }
+  .video_item {
+    @apply cursor-pointer;
+  }
+  .img_vid_overlay {
+    @apply transition-colors bg-main-blue/50 absolute top-0 right-0 w-full h-full;
+  }
+  .icon_player {
+    @apply w-full h-full grid place-content-center;
+  }
+  .icon_player >svg >path{
+    @apply fill-white transition-colors
+  }
+  .img_vid_overlay:hover  {
+     @apply bg-main-blue/70
+  }
+  .img_vid_overlay:hover path {
+    @apply fill-main-gray
+ }
+
   .video_title {
     @apply text-second-blue font-medium text-lg;
+  }
+  #video_over_layer iframe{
+      @apply w-full h-full
   }
 
   /* question and answers section */
@@ -73,11 +98,11 @@
   .question {
     @apply text-main-blue font-medium flex justify-between items-center;
   }
-  .question .icon_q{
-    @apply w-[35px] transition-transform
+  .question .icon_q {
+    @apply w-[35px] transition-transform;
   }
-  .icon_q_top{
-    @apply transform rotate-180
+  .icon_q_top {
+    @apply transform rotate-180;
   }
   .answer {
     @apply max-h-0 overflow-hidden;
@@ -151,3 +176,5 @@
     position: relative;
   }
 }
+
+

@@ -1,0 +1,12 @@
+ <svg
+                    class="hide_nav_btn fill-white transition-colors hover:fill-main-gray"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M44.665,165.049a1.143,1.143,0,1,1-1.616,1.616L37,160.616l-6.049,6.049a1.143,1.143,0,0,1-1.616-1.616L35.384,159l-6.049-6.049a1.143,1.143,0,1,1,1.616-1.616L37,157.384l6.049-6.049a1.143,1.143,0,1,1,1.616,1.616L38.616,159Z"
+                      transform="translate(-29 -151)"
+                    />
+                  </svg>

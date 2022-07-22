@@ -110,15 +110,7 @@
         id="hero_section"
         class="relative h-[100vh] grid place-content-center"
       >
-        <!-- <div class="w-screen absolute bottom-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path
-              fill="#ffffff"
-              fill-opacity="1"
-              d="M0,192L34.3,165.3C68.6,139,137,85,206,101.3C274.3,117,343,203,411,229.3C480,256,549,224,617,181.3C685.7,139,754,85,823,69.3C891.4,53,960,75,1029,90.7C1097.1,107,1166,117,1234,122.7C1302.9,128,1371,128,1406,128L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
-            ></path>
-          </svg>
-        </div> -->
+       
         <div class="container relative z-30">
           <!-- section content flex -->
           <div class="flex flex-col lg:flex-row justify-between items-center">
@@ -236,100 +228,196 @@
         </div>
       </section>
       <!-- videos section -->
-      <section class="main_section">
+      <section id="videos_section" class="main_section">
+        <div
+        id="video_over_layer"
+        class="hidden fixed z-[99] bg-main-blue/95 top-0 left-0 w-full h-full"
+        >
+        <!-- close btn -->
+        <div class="cursor-pointer mx-auto mt-4 bg-white transition-colors hover:bg-main-gray w-[35px] h-[35px] rounded-full overflow-hidden p-[8px]">
+        <img src="./img/close_icon.svg" width="100%" height="100%" alt="close"/>
+        </svg>
+        </div>
+        
+        <!-- video -->
+        <div id="vid_container" class="w-full h-full grid place-items-center">
+         <div id="video_parrent" class="w-[min(650px,99%)] h-[500px] ">
+        
+         </div>
+        </div>
+        </div>
         <!-- container -->
         <div class="container text-center">
           <header class="section_title">
             <h2 class="">فديوهات شرح</h2>
           </header>
           <!-- videos container -->
-          <div class="grid grid-cols-2 gap-x-8 gap-y-16 mx-auto">
-            <div class="video_item">
-              <div class="video_frame_container">
-                <!-- <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube-nocookie.com/embed/an4Z0OdevXk"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe> -->
+          <div class="grid grid-cols-2 gap-x-8 gap-y-8 mx-auto">
+            <div class="video_item" data-id="an4Z0OdevXk">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                  class="thumb_img"
+                  src="/"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
               </div>
               <h3 class="video_title">شرح طريقة تثبيت برنامج واتس برو</h3>
             </div>
-            <div class="video_item">
-              <div class="video_frame_container">
-                <!-- <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube-nocookie.com/embed/an4Z0OdevXk"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe> -->
+            <div class="video_item" data-id="ynF9qfml8io">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <h3 class="video_title">سحب أرقام الأعضاء من قروبات الواتس و أسماء جهات الاتصال</h3>
+            </div>
+            <div class="video_item" data-id="A1oEggAcv6A">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <h3 class="video_title">طريقة تشغيل رقمك و فحص الأرقام</h3>
+            </div>
+            <div class="video_item" data-id="lMPuSQr08vU">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <h3 class="video_title">شرح ميزة الإرسال للقروبات و الإرسال للأرقام</h3>
+            </div>
+            <div class="video_item" data-id="an4Z0OdevXk">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
               </div>
               <h3 class="video_title">شرح طريقة تثبيت برنامج واتس برو</h3>
             </div>
-            <div class="video_item">
-              <div class="video_frame_container">
-                <!-- <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube-nocookie.com/embed/an4Z0OdevXk"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe> -->
-              </div>
-              <h3 class="video_title">شرح طريقة تثبيت برنامج واتس برو</h3>
-            </div>
-            <div class="video_item">
-              <div class="video_frame_container">
-                <!-- <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube-nocookie.com/embed/an4Z0OdevXk"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe> -->
-              </div>
-              <h3 class="video_title">شرح طريقة تثبيت برنامج واتس برو</h3>
-            </div>
-            <div class="video_item">
-              <div class="video_frame_container">
-                <!-- <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube-nocookie.com/embed/an4Z0OdevXk"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe> -->
-              </div>
-              <h3 class="video_title">شرح طريقة تثبيت برنامج واتس برو</h3>
-            </div>
-            <div class="video_item">
-              <div class="video_frame_container">
-                <!-- <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube-nocookie.com/embed/an4Z0OdevXk"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe> -->
+            <div class="video_item" data-id="an4Z0OdevXk">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
               </div>
               <h3 class="video_title">شرح طريقة تثبيت برنامج واتس برو</h3>
             </div>
           </div>
         </div>
+      
       </section>
       <!-- Questions & Answers section  -->
       <section class="main_section">
