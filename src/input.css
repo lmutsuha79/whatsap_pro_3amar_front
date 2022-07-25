@@ -66,7 +66,7 @@
     @apply relative;
   }
   .video_item {
-    @apply cursor-pointer;
+    @apply cursor-pointer max-w-[400px] place-self-start;
   }
   .img_vid_overlay {
     @apply transition-colors bg-main-blue/50 absolute top-0 right-0 w-full h-full;

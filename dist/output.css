@@ -740,7 +740,9 @@ html{
 }
 
 .video_item{
+  max-width: 400px;
   cursor: pointer;
+  place-self: start;
 }
 
 .img_vid_overlay{
@@ -938,16 +940,8 @@ html{
   position: fixed;
 }
 
-.absolute{
-  position: absolute;
-}
-
 .relative{
   position: relative;
-}
-
-.bottom-0{
-  bottom: 0px;
 }
 
 .top-0{
@@ -1057,10 +1051,6 @@ html{
   width: 100%;
 }
 
-.w-screen{
-  width: 100vw;
-}
-
 .w-fit{
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -1104,6 +1094,10 @@ html{
   flex-direction: column;
 }
 
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
 .flex-nowrap{
   flex-wrap: nowrap;
 }
@@ -1128,6 +1122,10 @@ html{
   justify-content: flex-start;
 }
 
+.justify-center{
+  justify-content: center;
+}
+
 .justify-between{
   justify-content: space-between;
 }
@@ -1143,15 +1141,6 @@ html{
 .gap-x-6{
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
-}
-
-.gap-x-8{
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-}
-
-.gap-y-16{
-  row-gap: 4rem;
 }
 
 .gap-y-8{
@@ -1320,9 +1309,9 @@ html{
   border-radius: 9999px;
 }
 
-.after\:mt-2::after{
+.after\:mt-6::after{
   content: var(--tw-content);
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
 }
 
 .after\:block::after{

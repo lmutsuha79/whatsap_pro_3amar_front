@@ -4,6 +4,6 @@
   },
   "scripts": {
     "build": "npx tailwindcss -i ./dist/output.css -o ./dist/build.css --minify",
-    "watch":"npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   }
 }

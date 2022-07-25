@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- don't move this stylesheet  -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link href="/dist/build.css" rel="stylesheet" />
   </head>
   <body dir="rtl" lang="ar" class="overflow-x-hidden">
@@ -229,30 +226,25 @@
       </section>
       <!-- videos section -->
       <section id="videos_section" class="main_section">
-        <div
-        id="video_over_layer"
-        class="hidden fixed z-[99] bg-main-blue/95 top-0 left-0 w-full h-full"
-        >
-        <!-- close btn -->
-        <div class="cursor-pointer mx-auto mt-4 bg-white transition-colors hover:bg-main-gray w-[35px] h-[35px] rounded-full overflow-hidden p-[8px]">
-        <img src="./img/close_icon.svg" width="100%" height="100%" alt="close"/>
-        </svg>
+        <!-- the over layer for display the video -->
+        <div id="video_over_layer" class="hidden fixed z-[99] bg-main-blue/95 top-0 left-0 w-full h-full">
+          <!-- close btn -->
+          <div class="cursor-pointer mx-auto mt-4 bg-white transition-colors hover:bg-main-gray w-[35px] h-[35px] rounded-full overflow-hidden p-[8px]">
+            <img src="./img/close_icon.svg" width="100%" height="100%" alt="close"/>
+          </div>
+          <!-- the video frame -->
+          <div id="vid_container" class="w-full h-full grid place-items-center">
+          <div id="video_parrent" class="w-[min(650px,99%)] h-[500px] "></div>
+          </div>
         </div>
-        
-        <!-- video -->
-        <div id="vid_container" class="w-full h-full grid place-items-center">
-         <div id="video_parrent" class="w-[min(650px,99%)] h-[500px] ">
-        
-         </div>
-        </div>
-        </div>
-        <!-- container -->
+
+        <!-- container of video grid ! contain only imgs of the videos -->
         <div class="container text-center">
           <header class="section_title">
             <h2 class="">فديوهات شرح</h2>
           </header>
           <!-- videos container -->
-          <div class="grid grid-cols-2 gap-x-8 gap-y-8 mx-auto">
+          <div class="flex gap-x-6 gap-y-8 flex-wrap justify-center">
             <div class="video_item" data-id="an4Z0OdevXk">
               <div class="img_video_container">
                 <div class="img_vid_overlay">
@@ -557,7 +549,7 @@
                 </p>
                 <!-- icons container -->
                 <div
-                  class="w-fit mx-auto after:content-[''] after:w-full after:h-[0.5px] before:rounded-full after:bg-white after:mt-2 after:block"
+                  class="w-fit mx-auto after:content-[''] after:w-full after:h-[0.5px] before:rounded-full after:bg-white after:mt-6 after:block"
                 >
                   <div class="flex gap-2 h-[35px] items-center">
                     <a href="#" class="icon_about">
