@@ -66,7 +66,7 @@
     @apply relative;
   }
   .video_item {
-    @apply cursor-pointer max-w-[400px] place-self-start;
+    @apply cursor-pointer max-w-[350px] place-self-start;
   }
   .img_vid_overlay {
     @apply transition-colors bg-main-blue/50 absolute top-0 right-0 w-full h-full;
@@ -85,7 +85,7 @@
  }
 
   .video_title {
-    @apply text-second-blue font-medium text-lg;
+    @apply text-second-blue font-medium text-lg mt-4;
   }
   #video_over_layer iframe{
       @apply w-full h-full
