@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- don't move this stylesheet  -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link href="/dist/build.css" rel="stylesheet" />
   </head>
   <body dir="rtl" lang="ar" class="overflow-x-hidden">
     <!-- desk nav -->
@@ -107,7 +110,6 @@
         id="hero_section"
         class="relative h-[100vh] grid place-content-center"
       >
-       
         <div class="container relative z-30">
           <!-- section content flex -->
           <div class="flex flex-col lg:flex-row justify-between items-center">
@@ -131,6 +133,19 @@
               <img src="./img/pc1.png" class="w-full h-full" alt="hero_img" />
             </div>
           </div>
+        </div>
+      </section>
+      <!-- aout products section -->
+      <section>
+        <div class="container">
+          <header class="section_title text-center space-y-4">
+            <h2 class="">منتجاتنا</h2>
+
+            <p class="text-base text-second-blue font-medium">
+              يقدم لك برنامج واتس برو على مجموعة واسعة من الخاصيات المميزة لتحقق
+              أقصى إتصال مع عملائك
+            </p>
+          </header>
         </div>
       </section>
       <!-- features section -->
@@ -227,14 +242,24 @@
       <!-- videos section -->
       <section id="videos_section" class="main_section">
         <!-- the over layer for display the video -->
-        <div id="video_over_layer" class="hidden fixed z-[99] bg-main-blue/95 top-0 left-0 w-full h-full">
+        <div
+          id="video_over_layer"
+          class="hidden fixed z-[99] bg-main-blue/95 top-0 left-0 w-full h-full"
+        >
           <!-- close btn -->
-          <div class="cursor-pointer mx-auto mt-4 bg-white transition-colors hover:bg-main-gray w-[35px] h-[35px] rounded-full overflow-hidden p-[8px]">
-            <img src="./img/close_icon.svg" width="100%" height="100%" alt="close"/>
+          <div
+            class="cursor-pointer mx-auto mt-4 bg-white transition-colors hover:bg-main-gray w-[35px] h-[35px] rounded-full overflow-hidden p-[8px]"
+          >
+            <img
+              src="./img/close_icon.svg"
+              width="100%"
+              height="100%"
+              alt="close"
+            />
           </div>
           <!-- the video frame -->
           <div id="vid_container" class="w-full h-full grid place-items-center">
-          <div id="video_parrent" class="w-[min(650px,99%)] h-[500px] "></div>
+            <div id="video_parrent" class="w-[min(650px,99%)] h-[500px]"></div>
           </div>
         </div>
 
@@ -290,14 +315,16 @@
                   </div>
                 </div>
                 <img
-                class="thumb_img"
+                  class="thumb_img"
                   src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
                   alt="how_to_install"
                   width="100%"
                   height="100%"
                 />
               </div>
-              <h3 class="video_title">سحب أرقام الأعضاء من قروبات الواتس و أسماء جهات الاتصال</h3>
+              <h3 class="video_title">
+                سحب أرقام الأعضاء من قروبات الواتس و أسماء جهات الاتصال
+              </h3>
             </div>
             <div class="video_item" data-id="A1oEggAcv6A">
               <div class="img_video_container">
@@ -317,7 +344,7 @@
                   </div>
                 </div>
                 <img
-                class="thumb_img"
+                  class="thumb_img"
                   src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
                   alt="how_to_install"
                   width="100%"
@@ -344,14 +371,16 @@
                   </div>
                 </div>
                 <img
-                class="thumb_img"
+                  class="thumb_img"
                   src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
                   alt="how_to_install"
                   width="100%"
                   height="100%"
                 />
               </div>
-              <h3 class="video_title">شرح ميزة الإرسال للقروبات و الإرسال للأرقام</h3>
+              <h3 class="video_title">
+                شرح ميزة الإرسال للقروبات و الإرسال للأرقام
+              </h3>
             </div>
             <div class="video_item" data-id="an4Z0OdevXk">
               <div class="img_video_container">
@@ -371,7 +400,7 @@
                   </div>
                 </div>
                 <img
-                class="thumb_img"
+                  class="thumb_img"
                   src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
                   alt="how_to_install"
                   width="100%"
@@ -398,7 +427,7 @@
                   </div>
                 </div>
                 <img
-                class="thumb_img"
+                  class="thumb_img"
                   src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
                   alt="how_to_install"
                   width="100%"
@@ -409,7 +438,6 @@
             </div>
           </div>
         </div>
-      
       </section>
       <!-- Questions & Answers section  -->
       <section class="main_section">
@@ -568,9 +596,18 @@
           </div>
         </div>
       </section>
-
+      <!-- footer -->
       <footer>
         <div class="bg-main-blue py-4">
+          <!-- maroof logo link -->
+          <div class="mb-8 w-fit mx-auto">
+            <a class=" opacity-70 hover:opacity-100 transition-opacity flex flex-col justify-center items-center" href="https://maroof.sa/95560">
+              <img class="max-w-[150px]" alt="maroof/95560" src="./img/maroof.png"/>
+              <span class=" text-white text-sm font-medium">رقم معروف: 95560</span>
+            </a>
+          </div>
+
+          <!-- all rights text -->
           <p class="text-white font-medium text-base text-center">
             جميع الحقوق محفوظة ©
             <a
