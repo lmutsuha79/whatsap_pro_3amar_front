@@ -7,6 +7,9 @@
   html {
     @apply font-Changa;
   }
+  .main_footer{
+    @apply mt-[100px]
+  }
 
 
 
@@ -18,7 +21,7 @@
     @apply mt-[100px];
   }
   .section_title {
-    @apply mb-12;
+    @apply mb-12 max-w-[550px] mx-auto;
   }
   .section_title > h2 {
     @apply text-4xl font-bold text-main-blue;
@@ -124,6 +127,11 @@
     @apply bg-light-blue/10 hover:bg-light-blue/20 transition-colors rounded-full p-2
   }
 
+  /* products style */
+  .grid_reverse >div:first-child{
+    grid-column: 2;
+    grid-row: 1;
+  }
 
 
 
