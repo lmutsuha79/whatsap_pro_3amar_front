@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Pro</title>
+    <!-- don't move this stylesheet  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body dir="rtl" lang="ar" class="overflow-x-hidden">
+    <!-- desk nav -->
+    <nav id="desk_nav" class="hidden sm:block h-fit bg-main-blue opacity">
+      <div class="container py-4">
+        <div class="flex justify-between h-full items-center">
+          <div class="w-[60px] h-[50px] overflow-hidden">
+            <!-- logo container -->
+            <img draggable="false" src="./img/logo.png" class="w-full h-full" />
+          </div>
+          <div class="nav_links_container flex gap-x-6">
+            <!-- links container -->
+            <a href="#">الرئيسية</a>
+            <a href="#">إتصل بنا</a>
+            <a href="#">من نحن</a>
+            <a href="#">الأسئلة الشائعة</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- mobile nav -->
+    <nav id="mb_nav" class="sm:hidden h-fit bg-main-blue">
+      <div class="container px-0">
+        <div class="flex flex-col justify-start items-start">
+          <!-- logo and btn close nav -->
+          <div class="flex justify-between items-center w-full px-2 py-2">
+            <!-- logo container -->
+            <div class="w-[60px] h-[60px] overflow-hidden">
+              <img
+                draggable="false"
+                src="./img/logo.png"
+                class="w-full h-full"
+              />
+            </div>
+            <!-- nav btn -->
+            <div class="transform scale-x-150 mx-2">
+              <div id="mb_nav_btn" class="cursor-pointer">
+                <div id="mb_nav_oppen" class="">
+                  <svg
+                    class="fill-white hover:fill-main-gray transition-colors"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="16"
+                    viewBox="0 0 20 16"
+                  >
+                    <path
+                      class=""
+                      id="menu-Bold_1_"
+                      d="M225,1823a1,1,0,0,0-1-1H211a1,1,0,0,0,0,2h13A1,1,0,0,0,225,1823Zm-19,6h18a1,1,0,0,1,0,2H206a1,1,0,0,1,0-2Zm9,7h9a1,1,0,0,1,0,2h-9a1,1,0,0,1,0-2Z"
+                      transform="translate(-205 -1822)"
+                    />
+                  </svg>
+                </div>
+
+                <div id="mb_nav_close" class="hidden">
+                  <svg
+                    class="hide_nav_btn fill-white transition-colors hover:fill-main-gray"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M44.665,165.049a1.143,1.143,0,1,1-1.616,1.616L37,160.616l-6.049,6.049a1.143,1.143,0,0,1-1.616-1.616L35.384,159l-6.049-6.049a1.143,1.143,0,1,1,1.616-1.616L37,157.384l6.049-6.049a1.143,1.143,0,1,1,1.616,1.616L38.616,159Z"
+                      transform="translate(-29 -151)"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- links -->
+          <div
+            id="hidden_nav_part"
+            class="w-full bg-main-blue transition-all max-h-0 overflow-hidden"
+          >
+            <!-- line -->
+            <div class="my-4 h-[1px] w-full bg-main-gray"></div>
+
+            <!-- links container -->
+            <div
+              class="px-2 nav_links_container flex flex-col space-y-4 items-start"
+            >
+              <a href="#">الرئيسية</a>
+              <a href="#">إتصل بنا</a>
+              <a href="#">من نحن</a>
+              <a href="#">الأسئلة الشائعة</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="">
+      <!-- hero section -->
+      <section
+        id="hero_section"
+        class="mt-0 relative h-[100vh] grid place-content-center"
+      >
+        <div class="container relative z-30">
+          <!-- section content flex -->
+          <div class="flex flex-col lg:flex-row justify-between items-center">
+            <!-- text -->
+            <div class="space-y-4">
+              <h2 class="text-4xl text-main-blue font-bold">
+                برنامج واتس
+                <span class="text-white">برو</span>
+              </h2>
+              <p class="text-white font-medium text-lg">
+                صمم خصيصاً لتحصل على افضل اتصال مع جمهورك و لتزيد ولاء عملائك
+                لعلامتك التجارية.
+              </p>
+              <a
+                class="w-fit h-fit cursor-pointer grid place-content-center bg-main-blue hover:bg-main-blue/90 transition-colors text-xl text-white font-medium px-4 py-2 lg:px-6 lg:py-3 rounded-lg"
+                >أحصل عليه</a
+              >
+            </div>
+            <!-- img -->
+            <div class="max-w-[300px] overflow-hidden">
+              <img src="./img/pc1.png" class="w-full h-full" alt="hero_img" />
+            </div>
+          </div>
+        </div>
+      </section>
+   
+      <!-- features section -->
+      <section >
+        <div class="container">
+          <header class="section_title text-center space-y-4">
+            <h2 class="">الخاصيات</h2>
+
+            <p class="text-base text-second-blue font-medium">
+              يقدم لك برنامج واتس برو على مجموعة واسعة من الخاصيات المميزة لتحقق
+              أقصى إتصال مع عملائك
+            </p>
+          </header>
+          <div class="mb-6 lg:grid grid-cols-2 lg:gap-8">
+            <!-- text items -->
+            <div>
+              <div class="features_items_container space-y-4">
+                <div class="features_item">
+                  <img src="./img/check_circle.svg" alt="icon" />
+                  <p>ارسال الرسائل عبر كافة المجموعات في نفس الوقت .</p>
+                </div>
+                <div class="features_item">
+                  <img src="./img/check_circle.svg" alt="icon" />
+                  <p>ارسال الرسائل عبر كافة المجموعات في نفس الوقت .</p>
+                </div>
+                <div class="features_item">
+                  <img src="./img/check_circle.svg" alt="icon" />
+                  <p>ارسال الرسائل عبر كافة المجموعات في نفس الوقت .</p>
+                </div>
+                <div class="features_item">
+                  <img src="./img/check_circle.svg" alt="icon" />
+                  <p>ارسال الرسائل عبر كافة المجموعات في نفس الوقت .</p>
+                </div>
+                <div class="features_item">
+                  <img src="./img/check_circle.svg" alt="icon" />
+                  <p>ارسال الرسائل عبر كافة المجموعات في نفس الوقت .</p>
+                </div>
+                <div class="features_item">
+                  <img src="./img/check_circle.svg" alt="icon" />
+                  <p>ارسال الرسائل عبر كافة المجموعات في نفس الوقت .</p>
+                </div>
+                <div class="features_item">
+                  <img src="./img/check_circle.svg" alt="icon" />
+                  <p>ارسال الرسائل عبر كافة المجموعات في نفس الوقت .</p>
+                </div>
+              </div>
+            </div>
+            <!-- slider -->
+            <div>
+              <!-- Swiper -->
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="slide_item_img_container">
+                      <img src="./img/img_slide.png" alt="img_slide" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_item_img_container">
+                      <img src="./img/img_slide.png" alt="img_slide" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_item_img_container">
+                      <img src="./img/img_slide.png" alt="img_slide" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_item_img_container">
+                      <img src="./img/img_slide.png" alt="img_slide" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_item_img_container">
+                      <img src="./img/img_slide.png" alt="img_slide" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="slide_item_img_container">
+                      <img src="./img/img_slide.png" alt="img_slide" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- videos section -->
+      <section id="videos_section" >
+        <!-- the over layer for display the video -->
+        <div
+          id="video_over_layer"
+          class="hidden fixed z-[99] bg-main-blue/95 top-0 left-0 w-full h-full"
+        >
+          <!-- close btn -->
+          <div
+            class="cursor-pointer mx-auto mt-4 bg-white transition-colors hover:bg-main-gray w-[35px] h-[35px] rounded-full overflow-hidden p-[8px]"
+          >
+            <img
+              src="./img/close_icon.svg"
+              width="100%"
+              height="100%"
+              alt="close"
+            />
+          </div>
+          <!-- the video frame -->
+          <div id="vid_container" class="w-full h-full grid place-items-center">
+            <div id="video_parrent" class="w-[min(650px,99%)] h-[500px]"></div>
+          </div>
+        </div>
+
+        <!-- container of video grid ! contain only imgs of the videos -->
+        <div class="container text-center">
+          <header class="section_title">
+            <h2 class="">فديوهات شرح</h2>
+          </header>
+          <!-- videos container -->
+          <div class="flex gap-8 flex-wrap justify-center">
+            <div class="video_item" data-id="an4Z0OdevXk">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                  class="thumb_img"
+                  src="/"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <h3 class="video_title">شرح طريقة تثبيت برنامج واتس برو</h3>
+            </div>
+            <div class="video_item" data-id="ynF9qfml8io">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                  class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <h3 class="video_title">
+                سحب أرقام الأعضاء من قروبات الواتس و أسماء جهات الاتصال
+              </h3>
+            </div>
+            <div class="video_item" data-id="A1oEggAcv6A">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                  class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <h3 class="video_title">طريقة تشغيل رقمك و فحص الأرقام</h3>
+            </div>
+            <div class="video_item" data-id="lMPuSQr08vU">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                  class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <h3 class="video_title">
+                شرح ميزة الإرسال للقروبات و الإرسال للأرقام
+              </h3>
+            </div>
+            <div class="video_item" data-id="an4Z0OdevXk">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                  class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <h3 class="video_title">شرح طريقة تثبيت برنامج واتس برو</h3>
+            </div>
+            <div class="video_item" data-id="an4Z0OdevXk">
+              <div class="img_video_container">
+                <div class="img_vid_overlay">
+                  <div class="icon_player">
+                    <svg
+                      width="80"
+                      height="80"
+                      viewBox="0 0 80 80"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32 58L56 40L32 22V58ZM40 0C17.92 0 0 17.92 0 40C0 62.08 17.92 80 40 80C62.08 80 80 62.08 80 40C80 17.92 62.08 0 40 0ZM40 72C22.36 72 8 57.64 8 40C8 22.36 22.36 8 40 8C57.64 8 72 22.36 72 40C72 57.64 57.64 72 40 72Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <img
+                  class="thumb_img"
+                  src="https://res.cloudinary.com/demo/image/fetch/https://reactnative-examples.com/wp-content/uploads/2022/02/default-loading-image.png"
+                  alt="how_to_install"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <h3 class="video_title">شرح طريقة تثبيت برنامج واتس برو</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Questions & Answers section  -->
+      <section >
+        <!-- container -->
+        <div class="container text-center">
+          <header class="section_title">
+            <h2 class="">الأسئلة الشائعة</h2>
+          </header>
+          <!-- items container -->
+          <div class="space-y-4">
+            <div class="QandA_item">
+              <div class="question">
+                <p>هل برنامج واتس برو مخصص لأجهزة الكمبيوتر أم للهواتف؟</p>
+                <div class="icon_q">
+                  <img
+                    src="./img/arrow_down.svg"
+                    alt="arrow_icon"
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
+              </div>
+              <div class="answer">
+                <p>البرنامج يعمل على أجهزة الكمبيوتر بنظام ويندوز 8 فما فوق</p>
+              </div>
+            </div>
+
+            <div class="QandA_item">
+              <div class="question">
+                <p>هل برنامج واتس برو مخصص لأجهزة الكمبيوتر أم للهواتف؟</p>
+                <div class="icon_q">
+                  <img
+                    src="./img/arrow_down.svg"
+                    alt="arrow_icon"
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
+              </div>
+              <div class="answer">
+                <p>البرنامج يعمل على أجهزة الكمبيوتر بنظام ويندوز 8 فما فوق</p>
+              </div>
+            </div>
+
+            <div class="QandA_item">
+              <div class="question">
+                <p>هل برنامج واتس برو مخصص لأجهزة الكمبيوتر أم للهواتف؟</p>
+                <div class="icon_q">
+                  <img
+                    src="./img/arrow_down.svg"
+                    alt="arrow_icon"
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
+              </div>
+              <div class="answer">
+                <p>البرنامج يعمل على أجهزة الكمبيوتر بنظام ويندوز 8 فما فوق</p>
+              </div>
+            </div>
+
+            <div class="QandA_item">
+              <div class="question">
+                <p>هل برنامج واتس برو مخصص لأجهزة الكمبيوتر أم للهواتف؟</p>
+                <div class="icon_q">
+                  <img
+                    src="./img/arrow_down.svg"
+                    alt="arrow_icon"
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
+              </div>
+              <div class="answer">
+                <p>البرنامج يعمل على أجهزة الكمبيوتر بنظام ويندوز 8 فما فوق</p>
+              </div>
+            </div>
+
+            <div class="QandA_item">
+              <div class="question">
+                <p>هل برنامج واتس برو مخصص لأجهزة الكمبيوتر أم للهواتف؟</p>
+                <div class="icon_q">
+                  <img
+                    src="./img/arrow_down.svg"
+                    alt="arrow_icon"
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
+              </div>
+              <div class="answer">
+                <p>البرنامج يعمل على أجهزة الكمبيوتر بنظام ويندوز 8 فما فوق</p>
+              </div>
+            </div>
+
+            <div class="QandA_item">
+              <div class="question">
+                <p>هل برنامج واتس برو مخصص لأجهزة الكمبيوتر أم للهواتف؟</p>
+                <div class="icon_q">
+                  <img
+                    src="./img/arrow_down.svg"
+                    alt="arrow_icon"
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
+              </div>
+              <div class="answer">
+                <p>البرنامج يعمل على أجهزة الكمبيوتر بنظام ويندوز 8 فما فوق</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- about section -->
+      <section >
+        <div class="about-bg">
+          <div class="container py-20 sm:py-40">
+            <div
+              class="flex flex-col flex-nowrap gap-8 justify-between items-center"
+            >
+              <!-- img container -->
+              <div class="">
+                <div class="max-w-[200px]">
+                  <img src="./img/logo.png" width="100%" height="100%" />
+                </div>
+              </div>
+              <!-- text container -->
+              <div class="space-y-4 text-center">
+                <header class="">
+                  <h2 class="text-white font-semibold text-2xl">من نحن</h2>
+                </header>
+                <p class="text-white text-base font-normal">
+                  فريق متخصص في ادارة الحملات الاعلانية ناجحة لمشروعك لزيادة
+                  متابعينك بخبرة تسويقية كبيرة على منصات التواصل الاجتماعي نعمل
+                  بها على بناء جمهور حقيقي لتحقيق أهداف مشروعك التجاري
+                </p>
+                <!-- icons container -->
+                <div
+                  class="w-fit mx-auto after:content-[''] after:w-full after:h-[0.5px] before:rounded-full after:bg-white after:mt-6 after:block"
+                >
+                  <div class="flex gap-2 h-[35px] items-center">
+                    <a href="#" class="icon_about">
+                      <img src="./img/WhatsApp_icon.png" alt="WaatsApp_link" />
+                    </a>
+                    <a href="#" class="icon_about">
+                      <img src="./img/youtube_icon.png" alt="youtube_link" />
+                    </a>
+                    <a href="#" class="icon_about">
+                      <img src="./img/Facebook_icon.png" alt="Facebook_link" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- footer -->
+      <footer>
+        <div class="bg-main-blue py-4">
+          <!-- maroof logo link -->
+          <div class="mb-8 w-fit mx-auto">
+            <a class=" opacity-70 hover:opacity-100 transition-opacity flex flex-col justify-center items-center space-y-2" href="https://maroof.sa/95560">
+              <img class="max-w-[150px]" alt="maroof/95560" src="./img/maroof_logo.png"/>
+              <span class=" text-white text-sm font-medium">رقم معروف: 95560</span>
+            </a>
+          </div>
+
+          <!-- all rights text -->
+          <p class="text-white font-medium text-base text-center">
+            جميع الحقوق محفوظة ©
+            <a
+              class="text-inherit hover:text-main-gray transition-colors"
+              href="#"
+              >(لايك برو)</a
+            >
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script type="module">
+      var swiper = new Swiper(".swiper", {
+        cssMode: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+    </script>
+  </body>
+</html>
