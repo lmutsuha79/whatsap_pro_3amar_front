@@ -113,7 +113,31 @@
   .answer > p {
     @apply text-second-blue font-normal pt-2 border-main-gray/50 border-t;
   }
-
+  /* pricing section */
+    .pricing_item{
+      @apply max-w-[300px] space-y-4 px-4 py-8 rounded-md shadow-md hover:shadow-lg transition-all duration-500 text-center transform hover:scale-110
+    }
+    .pricing_item .h4{
+      @apply text-xl text-second-blue font-semibold
+    }
+    .pricing_item .price{
+      @apply text-5xl text-main-blue font-bold
+    }
+    .pricing_item .user_month{
+      @apply text-sm text-second-blue
+    }
+    .pricing_item .desc{
+      @apply text-second-blue
+    }
+    .pricing_item .item_pricing_line{
+      @apply w-full h-[1px] rounded-lg bg-main-gray
+    }
+    .pricing_item .features{
+      @apply text-second-blue
+    }
+    .pricing_item .button{
+      @apply inline-block text-main-blue rounded-md border-main-blue border px-4 py-1 hover:text-white hover:bg-main-blue transition-colors
+    }
   /* about section */
   .icon_about {
     @apply transform hover:scale-110 transition-transform;
