@@ -215,6 +215,14 @@
   .about-bg > .container {
     position: relative;
   }
+
+  /* temp and condition html */
+  .temp_title{
+    @apply text-main-blue font-semibold text-2xl my-4
+  }
+  .other_page_content p {
+    @apply mb-4 text-second-blue
+  }
 }
 
 
