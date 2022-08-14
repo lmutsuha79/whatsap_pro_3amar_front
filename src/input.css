@@ -237,5 +237,7 @@
 }
 .animation_whatssApp_icon {
   animation: whatssApp_animation 2s infinite;
- 
+}
+.sections_log_container > section {
+  margin-top: 0px;
 }
