@@ -7,11 +7,9 @@
   html {
     @apply font-Changa;
   }
-  .main_footer{
-    @apply mt-[100px]
+  .main_footer {
+    @apply mt-[100px];
   }
-
-
 
   .container {
     @apply mx-auto px-1 max-w-[1280px];
@@ -77,21 +75,21 @@
   .icon_player {
     @apply w-full h-full grid place-content-center;
   }
-  .icon_player >svg >path{
-    @apply fill-white transition-colors
+  .icon_player > svg > path {
+    @apply fill-white transition-colors;
   }
-  .img_vid_overlay:hover  {
-     @apply bg-main-blue/70
+  .img_vid_overlay:hover {
+    @apply bg-main-blue/70;
   }
   .img_vid_overlay:hover path {
-    @apply fill-main-gray
- }
+    @apply fill-main-gray;
+  }
 
   .video_title {
     @apply text-second-blue font-medium text-lg mt-4;
   }
-  #video_over_layer iframe{
-      @apply w-full h-full
+  #video_over_layer iframe {
+    @apply w-full h-full;
   }
 
   /* question and answers section */
@@ -114,30 +112,30 @@
     @apply text-second-blue font-normal pt-2 border-main-gray/50 border-t;
   }
   /* pricing section */
-    .pricing_item{
-      @apply max-w-[300px] space-y-4 px-4 py-8 rounded-md shadow-md hover:shadow-lg transition-all duration-500 text-center transform hover:scale-110
-    }
-    .pricing_item .h4{
-      @apply text-xl text-second-blue font-semibold
-    }
-    .pricing_item .price{
-      @apply text-5xl text-main-blue font-bold
-    }
-    .pricing_item .user_month{
-      @apply text-sm text-second-blue
-    }
-    .pricing_item .desc{
-      @apply text-second-blue
-    }
-    .pricing_item .item_pricing_line{
-      @apply w-full h-[1px] rounded-lg bg-main-gray
-    }
-    .pricing_item .features{
-      @apply text-second-blue
-    }
-    .pricing_item .button{
-      @apply inline-block text-main-blue rounded-md border-main-blue border px-4 py-1 hover:text-white hover:bg-main-blue transition-colors
-    }
+  .pricing_item {
+    @apply max-w-[300px] space-y-4 px-4 py-8 rounded-md shadow-md hover:shadow-lg transition-all duration-500 text-center transform hover:scale-110;
+  }
+  .pricing_item .h4 {
+    @apply text-xl text-second-blue font-semibold;
+  }
+  .pricing_item .price {
+    @apply text-5xl text-main-blue font-bold;
+  }
+  .pricing_item .user_month {
+    @apply text-sm text-second-blue;
+  }
+  .pricing_item .desc {
+    @apply text-second-blue;
+  }
+  .pricing_item .item_pricing_line {
+    @apply w-full h-[1px] rounded-lg bg-main-gray;
+  }
+  .pricing_item .features {
+    @apply text-second-blue;
+  }
+  .pricing_item .button {
+    @apply inline-block text-main-blue rounded-md border-main-blue border px-4 py-1 hover:text-white hover:bg-main-blue transition-colors;
+  }
   /* about section */
   .icon_about {
     @apply transform hover:scale-110 transition-transform;
@@ -145,19 +143,17 @@
   .icon_about > img {
     @apply w-full h-full;
   }
-/* ########################################################################### */
-/* the main page style */
-  .hero_social_link_container{
-    @apply bg-light-blue/10 hover:bg-light-blue/20 transition-colors rounded-full p-2
+  /* ########################################################################### */
+  /* the main page style */
+  .hero_social_link_container {
+    @apply bg-light-blue/10 hover:bg-light-blue/20 transition-colors rounded-full p-2;
   }
 
   /* products style */
-  .grid_reverse >div:first-child{
+  .grid_reverse > div:first-child {
     grid-column: 2;
     grid-row: 1;
   }
-
-
 
   #hero_section {
     /* background-color: rgb(0, 129, 227); */
@@ -217,12 +213,29 @@
   }
 
   /* temp and condition html */
-  .temp_title{
-    @apply text-main-blue font-semibold text-2xl my-4
+  .temp_title {
+    @apply text-main-blue font-semibold text-2xl my-4;
   }
   .other_page_content p {
-    @apply mb-4 text-second-blue
+    @apply mb-4 text-second-blue;
   }
 }
 
+/* whatssApp icon animation */
 
+@keyframes whatssApp_animation {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animation_whatssApp_icon {
+  animation: whatssApp_animation 2s infinite;
+ 
+}

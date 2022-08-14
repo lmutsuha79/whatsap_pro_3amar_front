@@ -773,7 +773,7 @@ section{
   place-content: center;
 }
 
-.icon_player >svg >path{
+.icon_player > svg > path{
   fill: #fff;
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -999,7 +999,7 @@ section{
 
 /* products style */
 
-.grid_reverse >div:first-child{
+.grid_reverse > div:first-child {
   grid-column: 2;
   grid-row: 1;
 }
@@ -1086,12 +1086,12 @@ section{
   position: relative;
 }
 
-.top-\[-30px\]{
-  top: -30px;
+.top-\[50\%\]{
+  top: 50%;
 }
 
-.right-\[-30px\]{
-  right: -30px;
+.left-1{
+  left: 0.25rem;
 }
 
 .top-0{
@@ -1102,12 +1102,32 @@ section{
   left: 0px;
 }
 
-.z-30{
-  z-index: 30;
+.right-0{
+  right: 0px;
+}
+
+.bottom-0{
+  bottom: 0px;
+}
+
+.top-\[-30px\]{
+  top: -30px;
+}
+
+.right-\[-30px\]{
+  right: -30px;
 }
 
 .z-\[99\]{
   z-index: 99;
+}
+
+.z-0{
+  z-index: 0;
+}
+
+.z-30{
+  z-index: 30;
 }
 
 .mx-2{
@@ -1170,14 +1190,18 @@ section{
   display: none;
 }
 
-.h-fit{
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.h-\[40px\]{
+  height: 40px;
 }
 
 .h-full{
   height: 100%;
+}
+
+.h-fit{
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .h-\[50px\]{
@@ -1234,28 +1258,20 @@ section{
   max-height: fit-content;
 }
 
-.min-h-\[calc\(100vh-80px-56px\)\]{
-  min-height: calc(100vh - 80px - 56px);
-}
-
-.min-h-\[calc\(100vh-80px-56px-100px\)\]{
-  min-height: calc(100vh - 80px - 56px - 100px);
-}
-
-.min-h-\[calc\(100vh\)\]{
-  min-height: calc(100vh);
-}
-
 .min-h-\[calc\(100vh-80px-56px-100px-100px\)\]{
   min-height: calc(100vh - 80px - 56px - 100px - 100px);
 }
 
-.w-\[60px\]{
-  width: 60px;
+.w-\[40px\]{
+  width: 40px;
 }
 
 .w-full{
   width: 100%;
+}
+
+.w-\[60px\]{
+  width: 60px;
 }
 
 .w-\[75\%\]{
@@ -1415,6 +1431,10 @@ section{
   overflow-x: hidden;
 }
 
+.rounded-full{
+  border-radius: 9999px;
+}
+
 .rounded-md{
   border-radius: 0.375rem;
 }
@@ -1423,8 +1443,14 @@ section{
   border-radius: 0.5rem;
 }
 
-.rounded-full{
-  border-radius: 9999px;
+.bg-green-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
+.bg-green-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 
 .bg-main-blue{
@@ -1457,6 +1483,10 @@ section{
 
 .fill-white{
   fill: #fff;
+}
+
+.p-2{
+  padding: 0.5rem;
 }
 
 .p-\[8px\]{
@@ -1506,14 +1536,14 @@ section{
   text-align: center;
 }
 
-.text-base{
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-4xl{
@@ -1562,13 +1592,13 @@ section{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-inherit{
-  color: inherit;
-}
-
 .text-second-blue{
   --tw-text-opacity: 1;
   color: rgb(95 108 123 / var(--tw-text-opacity));
+}
+
+.text-inherit{
+  color: inherit;
 }
 
 .underline{
@@ -1578,6 +1608,12 @@ section{
 
 .opacity-70{
   opacity: 0.7;
+}
+
+.transition-transform{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .transition-colors{
@@ -1600,14 +1636,45 @@ section{
   transition-duration: 150ms;
 }
 
-.transition-transform{
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .duration-1000{
   transition-duration: 1000ms;
+}
+
+/* whatssApp icon animation */
+
+@-webkit-keyframes whatssApp_animation {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes whatssApp_animation {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animation_whatssApp_icon {
+  -webkit-animation: whatssApp_animation 2s infinite;
+          animation: whatssApp_animation 2s infinite;
 }
 
 .hover\:scale-125:hover{
@@ -1715,5 +1782,3 @@ section{
     padding-bottom: 0.75rem;
   }
 }
-
-
