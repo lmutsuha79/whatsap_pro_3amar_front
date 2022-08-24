@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .section_title {
+    @apply dark:text-white text-black text-2xl mb-8 font-semibold text-center;
+  }
+}
