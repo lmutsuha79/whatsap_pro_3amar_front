@@ -18,40 +18,16 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
     } else {
       document.documentElement.classList.remove('dark')
     }
-    function remove_video_item(parent) {
+    function remove_item(parent) {
       parent.remove()
     }
-    function add_new_video_item(parent) {
-      console.log(parent)
-      let video_item_html = `
-      <!-- vido _item -->
-      <div  class="flex gap-6 mb-6 items-center mt-2">
-        <button class="max-w-[30px] group" @click="(e => remove_video_item(e.currentTarget.parentElement))">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-          width="30" height="30"
-          viewBox="0 0 24 24"
-          class="mt-6 group-hover:fill-red-500 dark:fill-red-400 fill-red-400">    <path d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"></path></svg>
-        </button>
-        <div class="flex-auto">
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">إسم الشرح</label>
-            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="شرح طريقة تثبيت برنامج واتس برو" required>
-        </div>
-        <div class="flex-auto">
-            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">رابط الفيديو (يوتيوب)</label>
-            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://youtu.be/an4Z0OdevXk" required>
-        </div>
-      </div>
-      `
-     const wrapper = document.createElement('div');
-     wrapper.innerHTML= video_item_html;
-     let video_item = wrapper.firstChild;
-     parent.appendChild(wrapper)
-     
-     
-    }
+
+  
     
-    function add_div(parent,div){
-      
+    function add_item(parent,new_item_div){  
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML= new_item_div.innerHTML;
+      parent.appendChild(wrapper)
     }
     
     
@@ -336,13 +312,9 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 >الوصف</label
               >
-              <input
-                type="text"
-                id="last_name"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="صمم خصيصاً لتحصل على افضل اتصال مع جمهورك و لتزيد ولاء عملائك لعلامتك التجارية."
-                required
-              />
+           
+              <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"                 placeholder="صمم خصيصاً لتحصل على افضل اتصال مع جمهورك و لتزيد ولاء عملائك لعلامتك التجارية."
+              ></textarea>
             </div>
 
          
@@ -385,11 +357,35 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
           </section>
       <!-- features section -->
           <section class="mt-4">
-            <h2 class="section_title">الخاصيات</h2>
-            <div>
-                  <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">الخاصيات (إفصل بينها بإستعمال الفاصلة ,)</label>
-                  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ارسال الرسائل عبر كافة المجموعات في نفس الوقت ,ارسال الرسائل عبر كافة المجموعات في نفس الوقت ,ارسال الرسائل عبر كافة المجموعات في نفس الوقت "></textarea>
+            <h2 class="section_title">
+              <span>الخاصيات</span>
+              <button class="group" @click="e => add_item($refs.features_container,$refs.feature_item)">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  width="30" height="30"
+                  viewBox="0 0 24 24"
+                  class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"><path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 11 L 7 11 L 7 13 L 11 13 L 11 17 L 13 17 L 13 13 L 17 13 L 17 11 L 13 11 L 13 7 L 11 7 z"></path></svg>
+              </button>
+            </h2>
+            <div x-ref="features_container">
+              <div x-init="add_item($refs.features_container,$refs.feature_item)" x-ref="feature_item" class="hidden">
+                <div class="mb-4">
+                  <div class="flex items-center gap-2">
+                    <!-- remove parrent of the parrent -->
+                    <button class="max-w-[30px] group" @click="(e => remove_item(e.currentTarget.parentElement.parentElement))">
+                      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                      width="30" height="30"
+                      viewBox="0 0 24 24"
+                      class="mb-2 group-hover:fill-red-500 dark:fill-red-400 fill-red-400">    <path d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"></path></svg>
+                    </button>
+                    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">الخاصية</label>
+
+                  </div>
+                  <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ارسال الرسائل عبر كافة المجموعات في نفس الوقت ." required>
+                </div>
+              </div>
             </div>
+
+            <!-- features images select upload -->
             <div class="mt-8">
             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"> سلايدر عرض مميزات المنتج</label>
 
@@ -411,13 +407,13 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
 
           <!-- فيدوهات الشرح -->
           <section class="mt-4">
-            <h2 class="section_title flex gap-2 items-center justify-center">
+            <h2 class="section_title">
               <span>فديوهات شرح</span>
-              <button class="group" @click="e => add_new_video_item($refs.videos_container)">
+              <button class="group" @click="e => add_item($refs.videos_container,$refs.video_item)">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-width="30" height="30"
-viewBox="0 0 24 24"
-class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"><path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 11 L 7 11 L 7 13 L 11 13 L 11 17 L 13 17 L 13 13 L 17 13 L 17 11 L 13 11 L 13 7 L 11 7 z"></path></svg>
+                  width="30" height="30"
+                  viewBox="0 0 24 24"
+                  class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"><path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 11 L 7 11 L 7 13 L 11 13 L 11 17 L 13 17 L 13 13 L 17 13 L 17 11 L 13 11 L 13 7 L 11 7 z"></path></svg>
               </button>
             </h2>
               
@@ -425,9 +421,10 @@ class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"><path
             <div x-ref="videos_container">
              
               
-            <!-- vido _item -->
-              <div  class="flex gap-6 mb-6 items-center mt-2">
-                <button class="max-w-[30px] group" @click="(e => remove_video_item(e.currentTarget.parentElement))">
+            <div x-init="add_item($refs.videos_container,$refs.video_item)"  x-ref="video_item" class="hidden">
+              <!-- vido _item -->
+              <div class="flex gap-6 mb-6 items-center mt-2">
+                <button class="max-w-[30px] group" @click="(e => remove_item(e.currentTarget.parentElement))">
                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                   width="30" height="30"
                   viewBox="0 0 24 24"
@@ -443,22 +440,39 @@ class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"><path
                 </div>
               </div>
             </div>
+            </div>
           </section>
 
           <!-- Q and A  section-->
           <section class="mt-4">
-            <h2 class="section_title">الأسئلة الشائعة عن المنتج</h2>
-           <div>
-            <!-- question -->
-            <div class="grid gap-6 mb-6 md:grid-cols-2 mt-2">
-                  <div>
-                      <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">السؤال</label>
-                      <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="هل برنامج واتس برو مخصص لأجهزة الكمبيوتر أم للهواتف؟" required>
-                  </div>
-                  <div>
-                      <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">الجواب</label>
-                      <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="البرنامج يعمل على أجهزة الكمبيوتر بنظام ويندوز 8 فما فوق" required>
-                  </div>
+            <h2 class="section_title">
+              <span>الأسئلة الشائعة عن المنتج</span>
+              <button  class="group" @click="e => add_item($refs.QandA_container,$refs.QandA_item)">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  width="30" height="30"
+                  viewBox="0 0 24 24"
+                  class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"><path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 11 L 7 11 L 7 13 L 11 13 L 11 17 L 13 17 L 13 13 L 17 13 L 17 11 L 13 11 L 13 7 L 11 7 z"></path></svg>
+              </button>
+            </h2>
+           <div x-init="add_item($refs.QandA_container,$refs.QandA_item)"  x-ref="QandA_container">
+            <!-- item question and answer -->
+            <div class="hidden" x-ref="QandA_item" >
+              <div class=" flex gap-6 mb-6 md:flex-cols-2 mt-2">
+                <button class="max-w-[30px] group" @click="(e => remove_item(e.currentTarget.parentElement))">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  width="30" height="30"
+                  viewBox="0 0 24 24"
+                  class="mt-6 group-hover:fill-red-500 dark:fill-red-400 fill-red-400">    <path d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"></path></svg>
+                </button>    
+                <div class="flex-auto">
+                        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">السؤال</label>
+                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="هل برنامج واتس برو مخصص لأجهزة الكمبيوتر أم للهواتف؟" required>
+                    </div>
+                <div class="flex-auto">
+                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">الجواب</label>
+                    <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="البرنامج يعمل على أجهزة الكمبيوتر بنظام ويندوز 8 فما فوق" required>
+                </div>
+              </div>
             </div>
             
            </div>
@@ -467,26 +481,48 @@ class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"><path
 
           <!-- pricing section -->
           <section>
-            <h2 class="section_title">التسعيرات</h2>
-            <div class="grid gap-6 mb-6 md:grid-cols-2 mt-2">
-                  <div>
-                        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">نوع الخطة</label>
-                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="خطة إبتدائية" required>
-                    </div>
+            <h2 class="section_title">
+              <span>التسعيرات</span>
+              <button  class="group" @click="e => add_item($refs.pricing_container,$refs.pricing_item)">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  width="30" height="30"
+                  viewBox="0 0 24 24"
+                  class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"><path d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 11 L 7 11 L 7 13 L 11 13 L 11 17 L 13 17 L 13 13 L 17 13 L 17 11 L 13 11 L 13 7 L 11 7 z"></path></svg>
+              </button>
+            </h2>    
+            
+            <div x-ref="pricing_container">
+              <div x-init="add_item($refs.pricing_container,$refs.pricing_item)" x-ref="pricing_item" class="hidden">
+                
+                <div class="flex items-start gap-2">
+                  <button class="max-w-[30px] group" @click="(e => remove_item(e.currentTarget.parentElement))">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="30" height="30"
+                    viewBox="0 0 24 24"
+                    class="mt-6 group-hover:fill-red-500 dark:fill-red-400 fill-red-400">    <path d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"></path></svg>
+                  </button>   
+                  <div  class="flex-auto grid gap-6 mb-6 md:grid-cols-2 mt-2 pb-8 border-b border-b-gray-600">
                     <div>
-                        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">السعر</label>
-                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="50 ريال" required>
-                    </div>
-                    <div>
-                        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">الوصف</label>
-                        <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="اشترك في البرنامج لمدة شهر" required>
-                    </div>
-                    <div>
-                        
-                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">الممزيات إفصل بينها ب فاصلة ,</label>
-                        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ارسال الرسائل عبر كافة المجموعات في نفس الوقت ,ارسال الرسائل عبر كافة المجموعات في نفس الوقت,ارسال الرسائل عبر كافة المجموعات في نفس الوقت"></textarea>
-
-                    </div>
+                          <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">نوع الخطة</label>
+                          <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="خطة إبتدائية" required>
+                      </div>
+                      <div>
+                          <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">السعر</label>
+                          <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="50 ريال" required>
+                      </div>
+                      <div>
+                          <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">الوصف</label>
+                          <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="اشترك في البرنامج لمدة شهر" required>
+                      </div>
+                      <div>
+                          
+                          <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">الممزيات إفصل بينها ب فاصلة ,</label>
+                          <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ارسال الرسائل عبر كافة المجموعات في نفس الوقت ,ارسال الرسائل عبر كافة المجموعات في نفس الوقت,ارسال الرسائل عبر كافة المجموعات في نفس الوقت"></textarea>
+    
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
       </main>
@@ -497,6 +533,8 @@ class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"><path
             // save state of theme
             localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : ''
           }
+
+        
     </script>
   </body>
 </html>

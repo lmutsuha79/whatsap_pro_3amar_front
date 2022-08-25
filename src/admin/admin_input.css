@@ -4,6 +4,6 @@
 
 @layer components {
   .section_title {
-    @apply dark:text-white text-black text-2xl mb-8 font-semibold text-center;
+    @apply dark:text-white text-black text-2xl mb-8 font-semibold text-center flex gap-2 items-center justify-center;
   }
 }
