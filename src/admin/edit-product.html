@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/admin_output.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="./dark_theme_init.js"></script>
+  </head>
+  <body
+    x-data="{isDark:document.documentElement.classList.contains('dark')}"
+    class="dark:bg-[#111828]"
+  >
+    <div class="flex relative">
+      <aside class="w-64 h-screen sticky top-0 right-0" aria-label="Sidebar">
+        <div
+          class="overflow-y-auto h-full py-4 px-3 bg-gray-50 rounded dark:bg-gray-800"
+        >
+          <a href="https://flowbite.com/" class="flex items-center pr-2.5 mb-5">
+            <img
+              src="/src/img/logo.png"
+              class="ml-3 h-6 sm:h-7"
+              alt="Flowbite Logo"
+            />
+            <span
+              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+              >لايك برو</span
+            >
+          </a>
+          <button
+            id="theme_toggle"
+            type="button"
+            class="text-white dark:text-gray-700 bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-white dark:hover:bg-gray-300 dark:focus:bg-gray-500 dark:border-bg-gray-500"
+          >
+            تغيير الثيم
+          </button>
+
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                  <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                </svg>
+                <span class="mr-3">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                  ></path>
+                </svg>
+                <span class="flex-1 mr-3 whitespace-nowrap">Kanban</span>
+                <span
+                  class="inline-flex justify-center items-center px-2 mr-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
+                  >Pro</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"
+                  ></path>
+                  <path
+                    d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
+                  ></path>
+                </svg>
+                <span class="flex-1 mr-3 whitespace-nowrap">Inbox</span>
+                <span
+                  class="inline-flex justify-center items-center p-3 mr-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                  >3</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="flex-1 mr-3 whitespace-nowrap">Users</span>
+              </a>
+            </li>
+            <li x-data="{ open: false }">
+              <a
+                @click="open = ! open"
+                href="#"
+                class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="flex-1 mr-3 whitespace-nowrap">المنتجات</span>
+                <svg
+                  sidebar-toggle-item
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+              <ul x-show="open" id="dropdown-example" class="py-2 space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                    >قائمة المنتجات</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                    >أضف منتج</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                    >Invoice</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="flex-1 mr-3 whitespace-nowrap">Sign In</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="flex-1 mr-3 whitespace-nowrap">Sign Up</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <main class="mx-2 my-4 w-full">
+        <!-- products section -->
+
+        <h1
+          class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white"
+        >
+          تعديل المنتج
+        </h1>
+
+        <!-- hero section -->
+        <section class="space-y-4 mt-4">
+          <h2 class="section_title">الجزئ العلوي (Hero Section)</h2>
+          <div class="grid gap-6 mb-6 md:grid-cols-2 mt-2">
+            <div>
+              <label
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >العنوان</label
+              >
+              <input
+                value="واتساب برو"
+                type="text"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="واتساب برو"
+                required
+              />
+            </div>
+            <div>
+              <label
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >name</label
+              >
+              <input
+                value="Whatsapp Pro"
+                type="text"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Whatsapp Pro"
+                required
+              />
+            </div>
+            <div>
+              <label
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >value</label
+              >
+              <input
+                value="wp0"
+                type="text"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="wp0"
+                required
+              />
+            </div>
+            <div>
+              <label
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >Slug</label
+              >
+              <input
+                value="whatssapp-pro"
+                type="text"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="whatsapp-pro"
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >الوصف</label
+            >
+
+            <textarea
+              id="message"
+              rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="صمم خصيصاً لتحصل على افضل اتصال مع جمهورك و لتزيد ولاء عملائك لعلامتك التجارية."
+            >
+صمم خصيصا لتحصل على افضل اتصال مع جمهورك ولتزيد ولاء عملائك لعلاماك التجارية
+          </textarea
+            >
+          </div>
+        </section>
+        <!-- images of -->
+        <section class="mt-4" x-data="{show_upload: false}">
+          <h3
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >
+            صورة البرنامج
+          </h3>
+          <div class="my-4">
+              <button
+              x-show="show_upload == false"
+              @click="show_upload = true"
+                class="max-w-[30px] group"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 24 24"
+                  class="mb-2 group-hover:fill-red-500 dark:fill-red-400 fill-red-400"
+                >
+                  <path
+                    d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"
+                  ></path>
+                </svg>
+              </button>
+            <img x-show="show_upload == false" width="300px" src="../img/pc1.png" alt="whatsApp_pro_img" />
+          </div>
+          <div x-show="show_upload == true">
+            <!-- upload image of product -->
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="file_input">إرفع الصورة الجديدة</label>
+            <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
+
+          </div>
+        </section>
+        <!-- features section -->
+        <section class="mt-4">
+          <h2 class="section_title">
+            <span>الخاصيات</span>
+            <button
+              class="group"
+              @click="e => add_item($refs.features_container,$refs.feature_item)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"
+              >
+                <path
+                  d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 11 L 7 11 L 7 13 L 11 13 L 11 17 L 13 17 L 13 13 L 17 13 L 17 11 L 13 11 L 13 7 L 11 7 z"
+                ></path>
+              </svg>
+            </button>
+          </h2>
+          <div x-ref="features_container">
+            <div
+              x-init="add_item($refs.features_container,$refs.feature_item)"
+              x-ref="feature_item"
+              class="hidden"
+            >
+              <div class="mb-4">
+                <div class="flex items-center gap-2">
+                  <!-- remove parrent of the parrent -->
+                  <button
+                    class="max-w-[30px] group"
+                    @click="(e => remove_item(e.currentTarget.parentElement.parentElement))"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      class="mb-2 group-hover:fill-red-500 dark:fill-red-400 fill-red-400"
+                    >
+                      <path
+                        d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <label
+                    for="first_name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >الخاصية</label
+                  >
+                </div>
+                <input
+                  type="text"
+                  id="first_name"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="ارسال الرسائل عبر كافة المجموعات في نفس الوقت ."
+                  required
+                />
+              </div>
+            </div>
+            <div
+              x-init="add_item($refs.features_container,$refs.feature_item)"
+              x-ref="feature_item"
+              class="hidden"
+            >
+              <div class="mb-4">
+                <div class="flex items-center gap-2">
+                  <!-- remove parrent of the parrent -->
+                  <button
+                    class="max-w-[30px] group"
+                    @click="(e => remove_item(e.currentTarget.parentElement.parentElement))"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      class="mb-2 group-hover:fill-red-500 dark:fill-red-400 fill-red-400"
+                    >
+                      <path
+                        d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <label
+                    for="first_name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >الخاصية</label
+                  >
+                </div>
+                <input
+                  type="text"
+                  id="first_name"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="ارسال الرسائل عبر كافة المجموعات في نفس الوقت ."
+                  required
+                />
+              </div>
+            </div>
+            <div
+              x-init="add_item($refs.features_container,$refs.feature_item)"
+              x-ref="feature_item"
+              class="hidden"
+            >
+              <div class="mb-4">
+                <div class="flex items-center gap-2">
+                  <!-- remove parrent of the parrent -->
+                  <button
+                    class="max-w-[30px] group"
+                    @click="(e => remove_item(e.currentTarget.parentElement.parentElement))"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 24 24"
+                      class="mb-2 group-hover:fill-red-500 dark:fill-red-400 fill-red-400"
+                    >
+                      <path
+                        d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <label
+                    for="first_name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >الخاصية</label
+                  >
+                </div>
+                <input
+                  type="text"
+                  id="first_name"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="ارسال الرسائل عبر كافة المجموعات في نفس الوقت ."
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- features images select upload -->
+          <div class="mt-8">
+            <label
+              for="message"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+            >
+              سلايدر عرض مميزات المنتج</label
+            >
+
+            <div class="flex justify-center items-center w-full">
+              <label
+                for="add_features_images"
+                class="flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+              >
+                <div
+                  class="flex flex-col justify-center items-center pt-5 pb-6"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="mb-3 w-10 h-10 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                    ></path>
+                  </svg>
+                  <p
+                    class="text-2xl font-semibold text-gray-500 dark:text-gray-400 mb-1"
+                  >
+                    إختر صور من داخل المنتج
+                  </p>
+                  <p
+                    class="font-semibold text-gray-500 dark:text-gray-400 mb-1"
+                  >
+                    (يمكن اختيار عدة صور)
+                  </p>
+                  <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                    <span class="font-semibold">إضغط لرفع صور</span> أو قم بسحب
+                    الصور
+                  </p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    SVG, PNG, JPG or GIF (MAX. 800x400px)
+                  </p>
+                </div>
+                <input
+                  id="add_features_images"
+                  type="file"
+                  multiple
+                  class="hidden"
+                />
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- فيدوهات الشرح -->
+        <section class="mt-4">
+          <h2 class="section_title">
+            <span>فديوهات شرح</span>
+            <button
+              class="group"
+              @click="e => add_item($refs.videos_container,$refs.video_item)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"
+              >
+                <path
+                  d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 11 L 7 11 L 7 13 L 11 13 L 11 17 L 13 17 L 13 13 L 17 13 L 17 11 L 13 11 L 13 7 L 11 7 z"
+                ></path>
+              </svg>
+            </button>
+          </h2>
+
+          <div x-ref="videos_container">
+            <div
+              x-init="add_item($refs.videos_container,$refs.video_item)"
+              x-ref="video_item"
+              class="hidden"
+            >
+              <!-- vido _item -->
+              <div class="flex gap-6 mb-6 items-center mt-2">
+                <button
+                  class="max-w-[30px] group"
+                  @click="(e => remove_item(e.currentTarget.parentElement))"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    class="mt-6 group-hover:fill-red-500 dark:fill-red-400 fill-red-400"
+                  >
+                    <path
+                      d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="flex-auto">
+                  <label
+                    for="first_name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >إسم الشرح</label
+                  >
+                  <input
+                    type="text"
+                    id="first_name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="شرح طريقة تثبيت برنامج واتس برو"
+                    required
+                  />
+                </div>
+                <div class="flex-auto">
+                  <label
+                    for="last_name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >رابط الفيديو (يوتيوب)</label
+                  >
+                  <input
+                    type="text"
+                    id="last_name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="https://youtu.be/an4Z0OdevXk"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Q and A  section-->
+        <section class="mt-4">
+          <h2 class="section_title">
+            <span>الأسئلة الشائعة عن المنتج</span>
+            <button
+              class="group"
+              @click="e => add_item($refs.QandA_container,$refs.QandA_item)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"
+              >
+                <path
+                  d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 11 L 7 11 L 7 13 L 11 13 L 11 17 L 13 17 L 13 13 L 17 13 L 17 11 L 13 11 L 13 7 L 11 7 z"
+                ></path>
+              </svg>
+            </button>
+          </h2>
+          <div
+            x-init="add_item($refs.QandA_container,$refs.QandA_item)"
+            x-ref="QandA_container"
+          >
+            <!-- item question and answer -->
+            <div class="hidden" x-ref="QandA_item">
+              <div class="flex gap-6 mb-6 md:flex-cols-2 mt-2">
+                <button
+                  class="max-w-[30px] group"
+                  @click="(e => remove_item(e.currentTarget.parentElement))"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    class="mt-6 group-hover:fill-red-500 dark:fill-red-400 fill-red-400"
+                  >
+                    <path
+                      d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="flex-auto">
+                  <label
+                    for="first_name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >السؤال</label
+                  >
+                  <input
+                    type="text"
+                    id="first_name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="هل برنامج واتس برو مخصص لأجهزة الكمبيوتر أم للهواتف؟"
+                    required
+                  />
+                </div>
+                <div class="flex-auto">
+                  <label
+                    for="last_name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >الجواب</label
+                  >
+                  <input
+                    type="text"
+                    id="last_name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="البرنامج يعمل على أجهزة الكمبيوتر بنظام ويندوز 8 فما فوق"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- pricing section -->
+        <section>
+          <h2 class="section_title">
+            <span>التسعيرات</span>
+            <button
+              class="group"
+              @click="e => add_item($refs.pricing_container,$refs.pricing_item)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                class="mt-2 group-hover:fill-green-700 dark:fill-green-500 fill-green-500"
+              >
+                <path
+                  d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 7 L 11 11 L 7 11 L 7 13 L 11 13 L 11 17 L 13 17 L 13 13 L 17 13 L 17 11 L 13 11 L 13 7 L 11 7 z"
+                ></path>
+              </svg>
+            </button>
+          </h2>
+
+          <div x-ref="pricing_container">
+            <div
+              x-init="add_item($refs.pricing_container,$refs.pricing_item)"
+              x-ref="pricing_item"
+              class="hidden"
+            >
+              <div class="flex items-start gap-2">
+                <button
+                  class="max-w-[30px] group"
+                  @click="(e => remove_item(e.currentTarget.parentElement))"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    class="mt-6 group-hover:fill-red-500 dark:fill-red-400 fill-red-400"
+                  >
+                    <path
+                      d="M12,2C6.47,2,2,6.47,2,12c0,5.53,4.47,10,10,10s10-4.47,10-10C22,6.47,17.53,2,12,2z M16.707,15.293 c0.391,0.391,0.391,1.023,0,1.414C16.512,16.902,16.256,17,16,17s-0.512-0.098-0.707-0.293L12,13.414l-3.293,3.293 C8.512,16.902,8.256,17,8,17s-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L10.586,12L7.293,8.707 c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L12,10.586l3.293-3.293c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L13.414,12L16.707,15.293z"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  class="flex-auto grid gap-6 mb-6 md:grid-cols-2 mt-2 pb-8 border-b border-b-gray-600"
+                >
+                  <div>
+                    <label
+                      for="first_name"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      >نوع الخطة</label
+                    >
+                    <input
+                      type="text"
+                      id="first_name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="خطة إبتدائية"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="first_name"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      >السعر</label
+                    >
+                    <input
+                      type="text"
+                      id="first_name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="50 ريال"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="first_name"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      >الوصف</label
+                    >
+                    <input
+                      type="text"
+                      id="first_name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="اشترك في البرنامج لمدة شهر"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="message"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      >الممزيات إفصل بينها ب فاصلة ,</label
+                    >
+                    <textarea
+                      id="message"
+                      rows="4"
+                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="ارسال الرسائل عبر كافة المجموعات في نفس الوقت ,ارسال الرسائل عبر كافة المجموعات في نفس الوقت,ارسال الرسائل عبر كافة المجموعات في نفس الوقت"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="admin_js.js"></script>
+  </body>
+</html>

@@ -7,10 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="/dist/admin_output.css" />
     <script
+
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <script src="./dark_theme_init.js"></script>
+    <script>
+ 
+    </script>
   </head>
   <body
     x-data="{isDark:document.documentElement.classList.contains('dark')}"
@@ -131,7 +135,8 @@
             </li>
             <li x-data="{ open: false }">
               <a
-                @click="open = ! open"
+              
+                @click="open = !open"
                 href="#"
                 class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
@@ -233,11 +238,203 @@
         </div>
       </aside>
       <main class="mx-2 my-4 w-full">
+        <h1
+          class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white"
+        >
+            إستعراض معلومات المفتاح
+      </h1>
 
-        
-        <h1 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
-          إضافة منتج
-        </h1>
+        <form class="mt-4">
+          <div class="grid gap-6 mb-6 md:grid-cols-2">
+            <div>
+              <label
+                for="name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >الإسم</label
+              >
+              <input
+              value="ياسر جمال الدين"
+                type="text"
+                id="name"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="ياسر"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >البريد الإلكتروني</label
+              >
+              <input
+              value="yasser_djamel79@gmail.com"
+                type="email"
+                id="email"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="exemple@exemple.com"
+                required
+              />
+            </div>
+
+            <div>
+              <label
+                for="phone"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >رقم الهاتف</label
+              >
+              <input
+              value="0798257795"
+                type="text"
+                id="phone"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="213798257795+"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="productName"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >إسم المنتج</label
+              >
+              <select
+                disabled
+                id="productName"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option value="Whatsapp_Pro" selected>Whatsapp Pro</option>
+                <option value="Telegram_Pro">Telegram Pro</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="maxLinked"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >عدد الأجهزة المتصلة</label
+              >
+              <input
+              
+                type="number"
+                id="id_max_linked"
+                value="2"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required
+              />
+             
+            </div>
+            <div>
+              <label
+                for="maxLinked"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                المفتاح
+                </label
+              >
+              <input
+              disabled
+                value="qFlXBVMuxpkhoD8cTSuoxWtCZdXtm6yUmmUjXqYimtc.eyJrIjoibmJ5cUoyOEcwb3Q4MmZVU0FTOVYiLCJwIjoid3AwIn0.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
+                type="text"
+                id="id_max_linked"
+                value="2"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required
+              />
+             
+            </div>
+            <div>
+              <label
+                for="maxLinked"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                تاريخ الإنشاء
+                </label
+              >
+              <input
+              disabled
+                value="Aug. 12, 2022, 8:47 p.m."
+                type="text"
+                id="id_max_linked"
+                value="2"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required
+              />
+             
+            </div>
+
+            <div>
+              <label
+                for="maxLinked"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                تاريخ الإنتهاء
+                </label
+              >
+              <input
+              value="Dec. 12, 2022, 8:47 p.m."
+
+                type="text"
+                id="id_max_linked"
+                value="2"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required
+              />
+             
+            </div>
+            <div>
+              <label
+                for="maxLinked"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+              الخطة
+                </label
+              >
+              <select
+              
+              id="productName"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
+              <option value="التجريبية" selected>التجريبية</option>
+              <option value="3">المبدإية 3 أشهر</option>
+              <option value="6"> نصف سنة</option>
+              <option value="12">  السنوية</option>
+            </select>
+             
+            </div>
+      </div>
+          <button
+            type="submit"
+            class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            حفظ التعديلات فوق
+      </button>
+    <div class="my-4">
+      <button
+      type="submit"
+      class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-700"
+    >
+      حذف المفتاح
+</button>
+<button
+      type="submit"
+      class="text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+    >
+توقيف المفتاح مؤقة
+  </button>
+<button
+      type="submit"
+      class="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+    >
+  إعادة تفعيل
+  </button>
+    </div>
+        <button
+        type="submit"
+        class="text-white bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-purbg-teal-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-purbg-teal-800"
+      >
+    تجديد الإشتراك
+    </button>
+        </form>
       </main>
     </div>
 

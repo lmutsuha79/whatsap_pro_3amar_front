@@ -10,8 +10,10 @@
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+<script src="./dark_theme_init.js"></script>
   </head>
-  <body class="dark:bg-[#111828]">
+  <body x-data="{isDark:document.documentElement.classList.contains('dark')}"  class="dark:bg-[#111828]">
+    
     <div class="flex relative">
       <aside class="w-64 h-screen sticky top-0 right-0" aria-label="Sidebar">
         <div
@@ -28,6 +30,10 @@
               >لايك برو</span
             >
           </a>
+          <button id="theme_toggle" type="button" class="text-white dark:text-gray-700 bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-white dark:hover:bg-gray-300 dark:focus:bg-gray-500 dark:border-bg-gray-500">
+            تغيير الثيم
+          </button>
+
           <ul class="space-y-2">
             <li>
               <a
@@ -338,61 +344,61 @@
               <div class="align-middle inline-block min-w-full">
                 <div class="shadow overflow-hidden">
                   <table
-                    class="table-fixed min-w-full divide-y divide-gray-200"
+                    class="table-fixed min-w-full divide-y divide-gray-400"
                   >
-                    <thead class="bg-gray-100">
+                    <thead class="bg-gray-100 dark:bg-gray-800">
                       <tr>
                         
                         <th
                           scope="col"
-                          class="p-4 text-left text-xs font-medium text-gray-500 uppercase"
+                          class="p-4 text-left text-xs font-medium text-gray-500 dark:text-gray-100 uppercase"
                         >
                           إسم المنتج
                         </th>
                         <th
                           scope="col"
-                          class="p-4 text-left text-xs font-medium text-gray-500 uppercase"
+                          class="p-4 text-left text-xs font-medium text-gray-500 dark:text-gray-100 uppercase"
                         >
                           صورة
                         </th>
                         <th
                           scope="col"
-                          class="p-4 text-left text-xs font-medium text-gray-500 uppercase"
+                          class="p-4 text-left text-xs font-medium text-gray-500 dark:text-gray-100 uppercase"
                         >
                           id
                         </th>
                         <th
                           scope="col"
-                          class="p-4 text-left text-xs font-medium text-gray-500 uppercase"
+                          class="p-4 text-left text-xs font-medium text-gray-500 dark:text-gray-100 uppercase"
                         >
                           سعر المفتاح
                         </th>
                         <th scope="col" class="p-4"></th>
                       </tr>
                     </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                      <tr class="hover:bg-gray-100">
+                    <tbody class="bg-white dark:bg-gray-600 divide-y divide-gray-200 dark:divide-gray-500">
+                      <tr class="hover:bg-gray-300 dark:hover:bg-gray-700">
                         
                         <td
-                          class="p-4 whitespace-nowrap text-sm font-normal text-gray-500"
+                          class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900 dark:text-gray-200"
                         >
-                          <div class="text-base font-semibold text-gray-900">
+                          <div class="">
                            واتساب برو
                           </div>
                           
                         </td>
                         <td
-                          class="p-4 whitespace-nowrap text-base font-medium text-gray-900"
+                          class="p-4 whitespace-nowrap text-base font-medium text-gray-900 dark:text-gray-200"
                         >
                           <img width="80px" height="80px"  src="/src/img/pc1.png" alt="واتساب برو"/>
                         </td>
                         <td
-                          class="p-4 whitespace-nowrap text-base font-medium text-gray-900"
+                          class="p-4 whitespace-nowrap text-base font-medium text-gray-900 dark:text-gray-200"
                         >
                           #194556
                         </td>
                         <td
-                          class="p-4 whitespace-nowrap text-base font-medium text-gray-900"
+                          class="p-4 whitespace-nowrap text-base font-medium text-gray-900 dark:text-gray-200"
                         >
                           $10
                         </td>
@@ -451,5 +457,7 @@
         </section>
       </main>
     </div>
+    <script src="admin_js.js"></script>
   </body>
+
 </html>

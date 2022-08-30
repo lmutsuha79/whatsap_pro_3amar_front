@@ -7,10 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="/dist/admin_output.css" />
     <script
+
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <script src="./dark_theme_init.js"></script>
+    <script>
+ 
+    </script>
   </head>
   <body
     x-data="{isDark:document.documentElement.classList.contains('dark')}"
@@ -131,7 +135,8 @@
             </li>
             <li x-data="{ open: false }">
               <a
-                @click="open = ! open"
+              
+                @click="open = !open"
                 href="#"
                 class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
@@ -233,11 +238,95 @@
         </div>
       </aside>
       <main class="mx-2 my-4 w-full">
-
-        
-        <h1 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
-          إضافة منتج
+        <h1
+          class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white"
+        >
+          إضافة مفتاح
         </h1>
+
+        <form class="mt-4">
+          <div class="grid gap-6 mb-6 md:grid-cols-2">
+            <div>
+              <label
+                for="name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >الإسم</label
+              >
+              <input
+                type="text"
+                id="name"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="ياسر"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >البريد الإلكتروني</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="exemple@exemple.com"
+                required
+              />
+            </div>
+
+            <div>
+              <label
+                for="phone"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >رقم الهاتف</label
+              >
+              <input
+                type="text"
+                id="phone"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="213798257795+"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="productName"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >إسم المنتج</label
+              >
+              <select
+                id="productName"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option value="Whatsapp_Pro" selected>Whatsapp Pro</option>
+                <option value="Telegram_Pro">Telegram Pro</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="maxLinked"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >عدد الأجهزة المتصلة</label
+              >
+              <input
+                type="number"
+                id="id_max_linked"
+                value="1"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                required
+              />
+             
+            </div>
+       
+      </div>
+          <button
+            type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            توليد المفتاح
+          </button>
+        </form>
       </main>
     </div>
 
