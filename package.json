@@ -5,6 +5,8 @@
   "scripts": {
     "build": "npx tailwindcss -i ./dist/output.css -o ./dist/build.css --minify",
     "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "watch_admin": " npx tailwindcss -i ./src/admin/admin_input.css -o ./dist/admin_output.css --watch"
+    "watch_admin": " npx tailwindcss -i ./src/admin/admin_input.css -o ./dist/admin_output.css --watch",
+    "build_admin": "npx tailwindcss -i ./dist/admin_output.css -o ./dist/build_admin.css --minify"
+
   }
 }
